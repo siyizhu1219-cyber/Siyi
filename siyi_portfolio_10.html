@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siyi | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        .dynamic-mesh-bg {
+            background: linear-gradient(135deg, #1b3a1a 0%, #31572c 35%, #4f772d 70%, #90a955 100%);
+            background-size: 400% 400%;
+            animation: liquidGradient 16s ease infinite;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; 
+        }
+
+        .portfolio-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 32px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        @keyframes liquidGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            background: transparent;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .card-transition {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mockup-shadow {
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .arched-portrait-frame {
+            border-radius: 160px 160px 24px 24px;
+            overflow: hidden;
+        }
+
+        #lightboxImg {
+            transition: opacity 0.25s ease-in-out, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-[#90a955] selection:text-[#1b3a1a] min-h-screen flex flex-col relative pb-0">
+
+    <div class="dynamic-mesh-bg"></div>
+
+    <header class="w-full sticky top-0 z-50 px-6 py-6 transition-all duration-300">
+        <div class="max-w-4xl mx-auto flex justify-between items-center bg-white/5 backdrop-blur-md rounded-full px-5 py-3 border border-white/10 shadow-lg">
+            <a href="#" class="font-bold text-base tracking-tight text-[#90a955] hover:opacity-80 transition-opacity">
+                Siyi<span class="text-white/60 font-normal">.</span>
+            </a>
+            
+            <nav class="flex items-center space-x-1 sm:space-x-2 text-[12px] sm:text-[13px] font-medium text-white/70">
+                <a href="#about" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">About</a>
+                <a href="#creative-works" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Creative Works</a>
+                <a href="#proposals" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Proposals</a>
+                <a href="#social-media" class="px-3 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition-all">Media</a>
+                <a href="#contact" class="px-4 py-1.5 rounded-full bg-[#90a955] text-[#1b3a1a] hover:bg-[#a3be66] transition-all font-semibold">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="w-full flex-grow">
+        <section class="max-w-5xl mx-auto px-6 pt-12 pb-16 text-center flex flex-col items-center justify-center">
+            <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tight text-[#90a955] select-none animate-pulse duration-1000 mb-6 font-sans">
+                Siyi<span class="text-[#ffffff]">.</span>
+            </h1>
+            <p class="text-white/90 text-lg sm:text-2xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                Work for content, marketing, creative writing.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 w-full max-w-4xl mb-16">
+                
+                <a href="#about" class="group relative overflow-hidden rounded-[32px] bg-[#d29cf3] p-6 md:col-span-5 flex flex-col justify-between aspect-square card-transition hover:scale-[1.03] hover:shadow-2xl hover:border-purple-300 border border-transparent">
+                    <div class="flex justify-between items-start w-full">
+                        <svg class="w-6 h-6 text-slate-800/80" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L14.39 9.26L22 9.27L15.81 13.75L18.2 21L12 16.5L5.8 21L8.19 13.75L2 9.27L9.61 9.26L12 2Z"/></svg>
+                        <div class="text-right">
+                            <span class="text-2xl font-extrabold text-slate-800 tracking-tight leading-none block mt-0.5">About</span>
+                        </div>
+                    </div>
+                    <div class="w-full mt-auto translate-y-6 group-hover:translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                        <div class="bg-white rounded-t-2xl shadow-xl border border-slate-200/50 overflow-hidden w-[110%] -ml-4">
+                            <div class="bg-[#005fa5] px-4 py-2.5 flex items-center space-x-2">
+                                <div class="flex space-x-1">
+                                    <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                                    <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                                    <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                                </div>
+                                <div class="h-3 w-28 bg-white/10 rounded-full"></div>
+                            </div>
+                            <div class="p-4 bg-slate-50 space-y-3 min-h-[140px]">
+                                <div class="h-2 w-3/4 bg-slate-200 rounded"></div>
+                                <div class="h-2 w-1/2 bg-slate-200 rounded"></div>
+                                <div class="bg-white rounded-xl border border-purple-200 shadow-md p-3 space-y-2 max-w-[90%] border-l-4 border-l-[#d29cf3]">
+                                    <div class="flex items-center space-x-1.5">
+                                        <span class="text-[9px] font-bold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded flex items-center gap-1">
+                                            About Siyi ✨
+                                        </span>
+                                        <span class="text-[10px] text-slate-500 font-mono">make longer</span>
+                                    </div>
+                                    <div class="h-1.5 w-full bg-slate-100 rounded"></div>
+                                    <div class="h-1.5 w-5/6 bg-slate-100 rounded"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#creative-works" class="group relative overflow-hidden rounded-[32px] bg-[#a8e4d5] p-6 md:col-span-7 flex flex-col justify-between aspect-video md:aspect-auto flex-grow card-transition hover:scale-[1.02] hover:shadow-2xl hover:border-teal-300 border border-transparent">
+                    <div class="flex justify-between items-start w-full mb-6">
+                        <svg class="w-6 h-6 text-slate-800/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                        <div class="text-right">
+                            <span class="text-2xl font-extrabold text-slate-800 tracking-tight leading-none block mt-0.5">Creative Works</span>
+                        </div>
+                    </div>
+                    <div class="w-full mt-auto translate-y-6 group-hover:translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                        <div class="bg-white rounded-t-2xl shadow-xl border border-slate-200/50 overflow-hidden w-[105%] -ml-2">
+                            <div class="bg-[#005fa5] px-4 py-2.5 flex items-center space-x-2">
+                                <div class="flex space-x-1">
+                                    <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                                    <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                                    <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                                </div>
+                                <div class="h-3 w-40 bg-white/10 rounded-full"></div>
+                            </div>
+                            <div class="p-6 bg-white space-y-4 min-h-[140px]">
+                                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                                    <span class="text-xs text-slate-400 font-mono">←</span>
+                                    <div class="flex space-x-2">
+                                        <span class="px-2.5 py-1 bg-slate-50 border border-slate-200 rounded text-[9px] text-slate-500 font-semibold shadow-sm">Preview</span>
+                                        <span class="px-2.5 py-1 bg-[#005fa5] rounded text-[9px] text-white font-semibold shadow-sm">Update ▼</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <span class="inline-block px-2 py-0.5 bg-emerald-50 text-emerald-600 border border-emerald-100 rounded text-[9px] font-bold uppercase tracking-wider">Published</span>
+                                    <h4 class="text-xs sm:text-sm font-bold text-slate-800 tracking-tight leading-relaxed">Posters and Videos</h4>
+                                    <div class="space-y-1.5 pt-1">
+                                        <div class="h-1.5 w-full bg-slate-100 rounded"></div>
+                                        <div class="h-1.5 w-11/12 bg-slate-100 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#proposals" class="group relative overflow-hidden rounded-[32px] bg-[#f1bca3] p-6 md:col-span-7 flex flex-col justify-between aspect-video md:aspect-auto flex-grow card-transition hover:scale-[1.02] hover:shadow-2xl hover:border-amber-300 border border-transparent">
+                    <div class="flex justify-between items-start w-full mb-6">
+                        <svg class="w-6 h-6 text-slate-800/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.67 2.67 0 1113.5 17.25l-5.17-5.17M11.42 15.17L12 14.5l-3.25-3.25-.67.67m3.34 3.25L9 11.58m-6 6l4-4M6 6h.01M6 10h.01M6 14h.01M10 6h.01M10 10h.01M10 14h.01M14 6h.01M14 10h.01M14 14h.01" /></svg>
+                        <div class="text-right">
+                            <span class="text-2xl font-extrabold text-slate-800 tracking-tight leading-none block mt-0.5">Proposals</span>
+                        </div>
+                    </div>
+                    <div class="w-full mt-auto translate-y-6 group-hover:translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                        <div class="bg-white rounded-t-2xl shadow-xl border border-slate-200/50 overflow-hidden w-[105%] -ml-2">
+                            <div class="bg-[#2c2c2c] px-4 py-2.5 flex items-center space-x-2">
+                                <div class="flex space-x-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+                                </div>
+                            </div>
+                            <div class="p-6 bg-[#fcfcfc] min-h-[140px] relative overflow-hidden">
+                                <div class="border border-dashed border-slate-200 rounded-xl p-4 min-h-[100px] flex items-center justify-center relative bg-slate-50/50">
+                                    <div class="relative w-24 h-24 flex items-center justify-center">
+                                        <div class="absolute w-16 h-16 rounded-2xl bg-pink-400/40 mix-blend-multiply border border-pink-500 -translate-x-3 -translate-y-2 animate-pulse"></div>
+                                        <div class="absolute w-14 h-14 rounded-full bg-indigo-400/40 mix-blend-multiply border border-indigo-500 translate-x-3 translate-y-2"></div>
+                                        <span class="text-[8px] font-mono bg-white px-1.5 py-0.5 border border-slate-200 rounded-full shadow absolute -top-1 -left-2 text-slate-500">Clients</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#social-media" class="group relative overflow-hidden rounded-[32px] bg-[#afd7f6] p-6 md:col-span-5 flex flex-col justify-between aspect-square card-transition hover:scale-[1.03] hover:shadow-2xl hover:border-blue-300 border border-transparent">
+                    <div class="flex justify-between items-start w-full">
+                        <svg class="w-6 h-6 text-slate-800/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+                        <div class="text-right">
+                            <span class="text-2xl font-extrabold text-slate-800 tracking-tight leading-none block mt-0.5">Media</span>
+                        </div>
+                    </div>
+                    <div class="w-full mt-auto translate-y-6 group-hover:translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center">
+                        <div class="bg-slate-900 border-[6px] border-slate-900 rounded-t-[32px] shadow-2xl overflow-hidden w-[85%] h-48 relative">
+                            <div class="bg-[#056854] px-4 py-2 flex justify-between items-center text-[8px] text-white/80 font-mono">
+                                <span>9:41</span>
+                                <div class="flex space-x-1"><span>📶</span><span>🔋</span></div>
+                            </div>
+                            <div class="bg-[#056854] pt-2 pb-6 px-4 space-y-3 relative rounded-b-[24px]">
+                                <div class="flex justify-between items-center text-white/80 text-[10px]">
+                                    <span>←</span><span>📥</span>
+                                </div>
+                                <div class="flex items-center -space-x-1.5 justify-center py-1 select-none">
+                                    <span class="w-7 h-7 rounded-full bg-amber-200 border-2 border-[#056854] text-[9px] flex items-center justify-center font-bold text-slate-800 shadow-sm">👩‍🎨</span>
+                                    <span class="w-7 h-7 rounded-full bg-blue-200 border-2 border-[#056854] text-[9px] flex items-center justify-center font-bold text-slate-800 shadow-sm">👨‍💻</span>
+                                    <span class="w-7 h-7 rounded-full bg-pink-200 border-2 border-[#056854] text-[9px] flex items-center justify-center font-bold text-slate-800 shadow-sm">👩‍💼</span>
+                                    <span class="w-7 h-7 rounded-full bg-purple-200 border-2 border-[#056854] text-[9px] flex items-center justify-center font-bold text-slate-800 shadow-sm">🧑‍🎓</span>
+                                    <span class="w-7 h-7 rounded-full bg-teal-200 border-2 border-[#056854] text-[9px] flex items-center justify-center font-bold text-slate-800 shadow-sm">👨‍💼</span>
+                                </div>
+                                <div class="h-1.5 w-1/2 bg-white/25 rounded-full mx-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+            <div id="workspace-container" class="w-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                
+                <!-- 01 About Me Section -->
+                <div id="about" class="mb-14 rounded-2xl overflow-hidden shadow-sm scroll-mt-24 workstation-card">
+                    <div class="bg-[#005fa5] px-4 py-3 flex items-center justify-between text-white select-none workstation-header">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex space-x-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                            </div>
+                            <div class="hidden sm:flex items-center space-x-1.5 pl-4 text-xs font-mono text-white/80">
+                                <span>siyi_workstation_v3.2</span>
+                                <span class="px-1.5 py-0.5 bg-white/15 rounded text-[10px] text-[#90a955]">Active</span>
+                                <span class="live-clock pl-2 border-l border-white/20 text-[#90a955]/90">12:00:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs">
+                            <button onclick="toggleWorkspaceExpand()" class="bg-[#ffffff]/10 hover:bg-[#ffffff]/20 transition-colors px-3 py-1 rounded text-white font-medium">Zen Mode</button>
+                            <button onclick="showToast('Content synced successfully ✓')" class="bg-[#90a955] text-[#005fa5] hover:bg-[#a3be66] transition-colors px-3 py-1 rounded font-semibold text-xs shadow-sm">Update ✓</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 sm:p-12 workstation-body">
+                        <div class="flex items-center space-x-3 border-b border-[#0d0d0d]/10 pb-4 mb-12">
+                            <span class="font-mono text-xs text-[#005fa5] bg-[#005fa5]/10 px-2 py-0.5 rounded font-bold">01</span>
+                            <h2 class="text-2xl font-bold tracking-tight text-[#0d0d0d] uppercase">ABOUT ME</h2>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                            <div class="shrink-0">
+                                <div class="arched-portrait-frame w-64 h-80 bg-[#1b3a1a]/10 relative group border border-[#1b3a1a]/10 shadow-lg">
+                                    <img src="assets/photos/about-me.jpg" alt="Portrait of Siyi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                                    <div class="absolute inset-0 bg-[#005fa5]/5 mix-blend-overlay"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <h3 class="text-2xl font-bold tracking-tight text-[#1b3a1a]">Siyi</h3>
+                                <p class="text-sm text-[#3a3a38] leading-relaxed font-light">
+                                    I am an experienced digital marketing specialist and integrated communicator. Holding an MA in Integrated Marketing Communication from the City University of Hong Kong and a Bachelor's in Advertising from Soochow University, I work at the intersection of business intelligence, user experience, and aesthetic branding.
+                                </p>
+                                <p class="text-sm text-[#5a5a58] leading-relaxed font-light">
+                                    Through major tenures including PR & Communications at Wide Advocacy srl., media management at AIA Group, and Key Account operations at Xiaohongshu, I design conversion-optimized visual workflows and compelling marketing narratives.
+                                </p>
+                                <div class="pt-4 flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-xs text-[#1b3a1a] font-medium">IMC Strategy</span>
+                                    <span class="px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-xs text-[#1b3a1a] font-medium">Brand Strategy</span>
+                                    <span class="px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-xs text-[#1b3a1a] font-medium">Creative Writing</span>
+                                    <span class="px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-xs text-[#1b3a1a] font-medium">Data Analysis (SPSS, R)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02 Creative Works Section -->
+                <div id="creative-works" class="mb-14 rounded-2xl overflow-hidden shadow-sm scroll-mt-24">
+                    <div class="bg-[#005fa5] px-4 py-3 flex items-center justify-between text-white select-none">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex space-x-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                            </div>
+                            <div class="hidden sm:flex items-center space-x-1.5 pl-4 text-xs font-mono text-white/80">
+                                <span>siyi_workstation_v3.2</span>
+                                <span class="px-1.5 py-0.5 bg-white/15 rounded text-[10px] text-[#90a955]">Active</span>
+                                <span class="live-clock pl-2 border-l border-white/20 text-[#90a955]/90">12:00:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs">
+                            <button onclick="toggleWorkspaceExpand()" class="bg-[#ffffff]/10 hover:bg-[#ffffff]/20 transition-colors px-3 py-1 rounded text-white font-medium">Zen Mode</button>
+                            <button onclick="showToast('Content synced successfully ✓')" class="bg-[#90a955] text-[#005fa5] hover:bg-[#a3be66] transition-colors px-3 py-1 rounded font-semibold text-xs shadow-sm">Update ✓</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 sm:p-12">
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-[#0d0d0d]/10 pb-4 mb-12">
+                            <div class="flex items-center space-x-3">
+                                <span class="font-mono text-xs text-[#005fa5] bg-[#005fa5]/10 px-2 py-0.5 rounded font-bold">02</span>
+                                <h2 class="text-2xl font-bold tracking-tight text-[#0d0d0d] uppercase">CREATIVE WORKS</h2>
+                            </div>
+                            <div class="flex space-x-2 text-xs">
+                                <button onclick="filterWorks('all')" id="btn-all" class="filter-btn px-3 py-1 rounded-full bg-[#0d0d0d] text-white font-medium transition-all duration-300">All</button>
+                                <button onclick="filterWorks('poster')" id="btn-poster" class="filter-btn px-3 py-1 rounded-full bg-[#0d0d0d]/5 text-[#5a5a58] hover:bg-[#0d0d0d]/10 transition-all duration-300">Posters</button>
+                                <button onclick="filterWorks('video')" id="btn-video" class="filter-btn px-3 py-1 rounded-full bg-[#0d0d0d]/5 text-[#5a5a58] hover:bg-[#0d0d0d]/10 transition-all duration-300">Videos</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Posters Section -->
+                        <div id="poster-gallery" class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start filter-item" data-category="poster">
+                            <!-- School Works -->
+                            <div class="poster-group space-y-4" data-group="school-works">
+                                <div class="relative overflow-hidden rounded-xl bg-slate-100 group shadow-sm">
+                                    <img id="img-school-works" src="https://placehold.co/300x533/eee/333?text=Work+1" alt="School Works" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-500" onclick="openPosterPreview('school-works')">
+                                    <button onclick="changePoster('school-works', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">‹</button>
+                                    <button onclick="changePoster('school-works', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">›</button>
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d]">School Works</h4>
+                                    <span class="text-xs text-slate-400 font-mono" id="page-school-works">1 / 3</span>
+                                </div>
+                            </div>
+
+                            <!-- The Paper -->
+                            <div class="poster-group space-y-4" data-group="the-paper">
+                                <div class="relative overflow-hidden rounded-xl bg-slate-100 group shadow-sm">
+                                    <img id="img-the-paper" src="https://placehold.co/300x400/eee/333?text=Paper+1" alt="The Paper" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-500" onclick="openPosterPreview('the-paper')">
+                                    <button onclick="changePoster('the-paper', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">‹</button>
+                                    <button onclick="changePoster('the-paper', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">›</button>
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d]">The Paper.</h4>
+                                    <span class="text-xs text-slate-400 font-mono" id="page-the-paper">1 / 3</span>
+                                </div>
+                            </div>
+
+                            <!-- AIA Group -->
+                            <div class="poster-group space-y-4" data-group="aia-group">
+                                <div class="relative overflow-hidden rounded-xl bg-slate-100 group shadow-sm">
+                                    <img id="img-aia-group" src="https://placehold.co/300x400/eee/333?text=AIA+1" alt="AIA Group" class="w-full h-auto cursor-pointer hover:scale-105 transition-transform duration-500" onclick="openPosterPreview('aia-group')">
+                                    <button onclick="changePoster('aia-group', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">‹</button>
+                                    <button onclick="changePoster('aia-group', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">›</button>
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d]">AIA Group</h4>
+                                    <span class="text-xs text-slate-400 font-mono" id="page-aia-group">1 / 5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Videos Section -->
+                        <div id="video-gallery" class="grid grid-cols-1 md:grid-cols-3 gap-8 filter-item mt-12" data-category="video">
+                            <!-- Documentary -->
+                            <div class="video-group space-y-4" data-group="folk-craft">
+                                <div class="relative aspect-video overflow-hidden rounded-xl bg-slate-100 group shadow-sm cursor-pointer" onclick="openVideoPreview('folk-craft')">
+                                    <div class="w-full h-full flex items-center justify-center bg-slate-200">Video Placeholder</div>
+                                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+                                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                                <h4 class="font-bold text-sm text-[#0d0d0d] px-1">Documentary: Folk Craft</h4>
+                            </div>
+                            <!-- Facial Cleanser -->
+                            <div class="video-group space-y-4" data-group="facial-cleanser">
+                                <div class="relative aspect-video overflow-hidden rounded-xl bg-slate-100 group shadow-sm cursor-pointer" onclick="openVideoPreview('facial-cleanser')">
+                                    <div class="w-full h-full flex items-center justify-center bg-slate-200">Video Placeholder</div>
+                                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+                                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                </div>
+                                <h4 class="font-bold text-sm text-[#0d0d0d] px-1">Hand-Drawn Ad: Facial Cleanser</h4>
+                            </div>
+                            <!-- Vlogs -->
+                            <div class="video-group space-y-4" data-group="vlog-edits">
+                                <div class="relative aspect-video overflow-hidden rounded-xl bg-slate-100 group shadow-sm cursor-pointer" onclick="openVideoPreview('vlog-edits')">
+                                    <div class="w-full h-full flex items-center justify-center bg-slate-200">Video Placeholder</div>
+                                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+                                        <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                    </div>
+                                    <button onclick="event.stopPropagation(); changeVideo('vlog-edits', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">‹</button>
+                                    <button onclick="event.stopPropagation(); changeVideo('vlog-edits', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">›</button>
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d]">Daily Vlog Edits</h4>
+                                    <span class="text-xs text-slate-400 font-mono" id="page-vlog-edits">1 / 2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 03 Proposals Section -->
+                <div id="proposals" class="mb-14 rounded-2xl overflow-hidden shadow-sm scroll-mt-24">
+                    <div class="bg-[#005fa5] px-4 py-3 flex items-center justify-between text-white select-none">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex space-x-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                            </div>
+                            <div class="hidden sm:flex items-center space-x-1.5 pl-4 text-xs font-mono text-white/80">
+                                <span>siyi_workstation_v3.2</span>
+                                <span class="px-1.5 py-0.5 bg-white/15 rounded text-[10px] text-[#90a955]">Active</span>
+                                <span class="live-clock pl-2 border-l border-white/20 text-[#90a955]/90">12:00:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs">
+                            <button onclick="toggleWorkspaceExpand()" class="bg-[#ffffff]/10 hover:bg-[#ffffff]/20 transition-colors px-3 py-1 rounded text-white font-medium">Zen Mode</button>
+                            <button onclick="showToast('Content synced successfully ✓')" class="bg-[#90a955] text-[#005fa5] hover:bg-[#a3be66] transition-colors px-3 py-1 rounded font-semibold text-xs shadow-sm">Update ✓</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 sm:p-12">
+                        <div class="flex items-center space-x-3 border-b border-[#0d0d0d]/10 pb-4 mb-12">
+                            <span class="font-mono text-xs text-[#005fa5] bg-[#005fa5]/10 px-2 py-0.5 rounded font-bold">03</span>
+                            <h2 class="text-2xl font-bold tracking-tight text-[#0d0d0d] uppercase">PROPOSALS</h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+                            <!-- Proposal 1: Automaker EU/ME Expansion -->
+                            <div class="proposal-group space-y-4" data-group="automaker-eu-me">
+                                <div class="relative aspect-video overflow-hidden rounded-xl bg-slate-100 group shadow-sm">
+                                    <img id="img-automaker-eu-me" src="https://placehold.co/480x270/1b3a1a/ffffff?text=Case+1" alt="Automaker EU/ME Expansion" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-500" onclick="openProposalPreview('automaker-eu-me')">
+                                    <button onclick="changeProposal('automaker-eu-me', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">‹</button>
+                                    <button onclick="changeProposal('automaker-eu-me', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">›</button>
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d] leading-snug pr-2">Analysis of Top Domestic Automakers' Overseas Expansion into Europe &amp; the Middle East</h4>
+                                    <span class="text-xs text-slate-400 font-mono shrink-0" id="page-automaker-eu-me">1 / 10</span>
+                                </div>
+                                <ul class="text-xs text-[#5a5a58] leading-relaxed font-light space-y-2 list-disc pl-4">
+                                    <li>Market priority tiered model: four market categories; target customer profiling covering five countries; nine major competitor landscape analyses. Identify market gaps within the 200,000–500,000 RMB price bracket, alongside differentiated communication positioning for Germany and France markets.</li>
+                                    <li>Systematically sort six categories of compliance risks including EU tariff barriers and the AI Act for vehicle software, and build a corresponding response checklist.</li>
+                                    <li>Establish a dual-market communication resource system for Europe and the Middle East, featuring a PR resource library with over 50 media platforms and more than 20 KOLs across diverse verticals.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Proposal 2: Oral Care Brand -->
+                            <div class="proposal-group space-y-4" data-group="oral-care-brand">
+                                <div class="relative aspect-[3/4] overflow-hidden rounded-xl bg-slate-100 group shadow-sm">
+                                    <img id="img-oral-care-brand" src="https://placehold.co/300x400/1b3a1a/ffffff?text=Case+2" alt="Oral Care Brand PR Plan" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-500" onclick="openProposalPreview('oral-care-brand')">
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d] leading-snug pr-2">Overseas PR Plan for a Domestic Oral Care Brand Targeting Europe &amp; America</h4>
+                                </div>
+                                <ul class="text-xs text-[#5a5a58] leading-relaxed font-light space-y-2 list-disc pl-4">
+                                    <li>Conduct in-depth research on the fundamental differences between European and American consumers in media consumption habits and trust-building journeys, and design a two-phase communication strategy tailored to the gap: leveraging tech crowdfunding campaigns for buzz in the US and authoritative professional exhibitions for brand validation across Europe.</li>
+                                    <li>Systematically dissect the PR tactics of three types of competing brands, and formulate a differentiation strategy built on professional media verification and industry expert endorsements to carve out a unique brand positioning.</li>
+                                    <li>Deliver a full-spectrum execution framework covering the establishment of a media database of 50–70 European and American outlets, screening of 15 KOL resources with customized seeding strategies, a six-month communication roadmap, press release writing, and media distribution partnerships.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Proposal 3: Suzhou Education Museum -->
+                            <div class="proposal-group space-y-4" data-group="edu-museum">
+                                <div class="relative aspect-video overflow-hidden rounded-xl bg-slate-100 group shadow-sm">
+                                    <img id="img-edu-museum" src="https://placehold.co/480x270/1b3a1a/ffffff?text=Case+3" alt="Suzhou Education Museum Event Plan" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-500" onclick="openProposalPreview('edu-museum')">
+                                    <button onclick="changeProposal('edu-museum', -1)" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">‹</button>
+                                    <button onclick="changeProposal('edu-museum', 1)" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-white/80 hover:bg-white rounded-full text-xs shadow">›</button>
+                                </div>
+                                <div class="flex justify-between items-center px-1">
+                                    <h4 class="font-bold text-sm text-[#0d0d0d] leading-snug pr-2">Back-to-School Season Event Plan, Suzhou Education Museum</h4>
+                                    <span class="text-xs text-slate-400 font-mono shrink-0" id="page-edu-museum">1 / 6</span>
+                                </div>
+                                <ul class="text-xs text-[#5a5a58] leading-relaxed font-light space-y-2 list-disc pl-4">
+                                    <li>Through curator interviews, SWOT analysis and visitor satisfaction data analysis, we established a new positioning of "fun aesthetic education".</li>
+                                    <li>Pioneered the cross-border model of "Museum + Metro Line 5", and designed three immersive station-based activities including rare Chinese character literacy programs and dynamic textbook exhibitions. We also built a media matrix covering Su-e App, Weibo topics and WeChat Channels, forming a closed-loop communication system of "online collection — offline check-in — secondary social media outreach".</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04 Social Media Section -->
+                <div id="social-media" class="mb-14 rounded-2xl overflow-hidden shadow-sm scroll-mt-24">
+                    <div class="bg-[#005fa5] px-4 py-3 flex items-center justify-between text-white select-none">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex space-x-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                            </div>
+                            <div class="hidden sm:flex items-center space-x-1.5 pl-4 text-xs font-mono text-white/80">
+                                <span>siyi_workstation_v3.2</span>
+                                <span class="px-1.5 py-0.5 bg-white/15 rounded text-[10px] text-[#90a955]">Active</span>
+                                <span class="live-clock pl-2 border-l border-white/20 text-[#90a955]/90">12:00:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs">
+                            <button onclick="toggleWorkspaceExpand()" class="bg-[#ffffff]/10 hover:bg-[#ffffff]/20 transition-colors px-3 py-1 rounded text-white font-medium">Zen Mode</button>
+                            <button onclick="showToast('Content synced successfully ✓')" class="bg-[#90a955] text-[#005fa5] hover:bg-[#a3be66] transition-colors px-3 py-1 rounded font-semibold text-xs shadow-sm">Update ✓</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 sm:p-12">
+                        <div class="flex items-center space-x-3 border-b border-[#0d0d0d]/10 pb-4 mb-12">
+                            <span class="font-mono text-xs text-[#005fa5] bg-[#005fa5]/10 px-2 py-0.5 rounded font-bold">04</span>
+                            <h2 class="text-2xl font-bold tracking-tight text-[#0d0d0d] uppercase">SOCIAL MEDIA SHOWCASE</h2>
+                        </div>
+
+                        <!-- Part 1: The Paper. Press Release Publication -->
+                        <div class="mb-16">
+                            <div class="space-y-2 mb-6">
+                                <span class="text-[10px] font-mono uppercase text-[#005fa5] bg-[#005fa5]/5 px-2.5 py-1 rounded-full font-bold">Press Coverage</span>
+                                <h3 class="text-xl font-bold tracking-tight text-[#0d0d0d]">The Paper. Press Release Publication</h3>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+                                <a href="https://m.thepaper.cn/newsDetail_forward_17609280" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                                    <div class="overflow-hidden bg-slate-100">
+                                        <img src="https://placehold.co/400x600/1b3a1a/ffffff?text=The+Paper+1" alt="The Paper press release 1" class="w-full h-auto group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="p-3 flex items-center justify-between">
+                                        <span class="text-xs font-semibold text-[#0d0d0d]">Report 01</span>
+                                        <span class="text-xs text-[#005fa5] group-hover:underline">View on The Paper ↗</span>
+                                    </div>
+                                </a>
+                                <a href="https://m.thepaper.cn/newsDetail_forward_17847053" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                                    <div class="overflow-hidden bg-slate-100">
+                                        <img src="https://placehold.co/400x600/31572c/ffffff?text=The+Paper+2" alt="The Paper press release 2" class="w-full h-auto group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="p-3 flex items-center justify-between">
+                                        <span class="text-xs font-semibold text-[#0d0d0d]">Report 02</span>
+                                        <span class="text-xs text-[#005fa5] group-hover:underline">View on The Paper ↗</span>
+                                    </div>
+                                </a>
+                                <a href="https://m.thepaper.cn/newsDetail_forward_17918661" target="_blank" rel="noopener noreferrer" class="group block rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                                    <div class="overflow-hidden bg-slate-100">
+                                        <img src="https://placehold.co/400x600/4f772d/ffffff?text=The+Paper+3" alt="The Paper press release 3" class="w-full h-auto group-hover:scale-105 transition-transform duration-500">
+                                    </div>
+                                    <div class="p-3 flex items-center justify-between">
+                                        <span class="text-xs font-semibold text-[#0d0d0d]">Report 03</span>
+                                        <span class="text-xs text-[#005fa5] group-hover:underline">View on The Paper ↗</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Part 2: IP SHANGHAI Website Articles -->
+                        <div class="mb-16">
+                            <div class="space-y-2 mb-6">
+                                <span class="text-[10px] font-mono uppercase text-[#005fa5] bg-[#005fa5]/5 px-2.5 py-1 rounded-full font-bold">Content Editing</span>
+                                <h3 class="text-xl font-bold tracking-tight text-[#0d0d0d]">IP SHANGHAI Website Articles</h3>
+                                <p class="text-sm text-[#5a5a58] leading-relaxed font-light max-w-3xl pt-2">
+                                    Edited, formatted, and published more than 60 articles and videos directly on the IP Shanghai official website, managing the full content pipeline from copy editing and image selection to on-site layout and publishing, while maintaining a consistent editorial tone and visual standard across every piece.
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 items-start">
+                                <div class="rounded-xl overflow-hidden bg-slate-100 shadow-sm">
+                                    <img src="https://placehold.co/300x400/1b3a1a/ffffff?text=Article+1" alt="IP Shanghai article 1" class="w-full h-auto">
+                                </div>
+                                <div class="rounded-xl overflow-hidden bg-slate-100 shadow-sm">
+                                    <img src="https://placehold.co/300x400/31572c/ffffff?text=Article+2" alt="IP Shanghai article 2" class="w-full h-auto">
+                                </div>
+                                <div class="rounded-xl overflow-hidden bg-slate-100 shadow-sm">
+                                    <img src="https://placehold.co/300x400/4f772d/ffffff?text=Article+3" alt="IP Shanghai article 3" class="w-full h-auto">
+                                </div>
+                                <div class="rounded-xl overflow-hidden bg-slate-100 shadow-sm">
+                                    <img src="https://placehold.co/300x400/90a955/1b3a1a?text=Article+4" alt="IP Shanghai article 4" class="w-full h-auto">
+                                </div>
+                                <div class="rounded-xl overflow-hidden bg-slate-100 shadow-sm">
+                                    <img src="https://placehold.co/300x400/005fa5/ffffff?text=Article+5" alt="IP Shanghai article 5" class="w-full h-auto">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Part 3: Personal Social Media -->
+                        <div>
+                            <div class="space-y-2 mb-6">
+                                <span class="text-[10px] font-mono uppercase text-[#005fa5] bg-[#005fa5]/5 px-2.5 py-1 rounded-full font-bold">Personal Channel</span>
+                                <h3 class="text-xl font-bold tracking-tight text-[#0d0d0d]">Personal Social Media</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                                <div class="md:col-span-2 space-y-6">
+                                    <p class="text-sm text-[#5a5a58] leading-relaxed font-light max-w-3xl">
+                                        Independently produced, filmed, edited, and published 12 videos on a personal social media account. One video surpassed 60,000 impressions and 3,000 likes, while two additional videos each exceeded 10,000 impressions and 2,000 likes, reflecting consistent audience engagement across the channel.
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                        <div class="bg-slate-50 border border-slate-100 rounded-xl p-5">
+                                            <span class="block text-2xl font-bold text-[#005fa5]">12</span>
+                                            <span class="text-xs text-slate-500 font-mono uppercase tracking-wide">Videos Published</span>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-100 rounded-xl p-5">
+                                            <span class="block text-2xl font-bold text-[#005fa5]">60K+</span>
+                                            <span class="text-xs text-slate-500 font-mono uppercase tracking-wide">Impressions (Top Video)</span>
+                                            <span class="block text-xs text-slate-400 mt-1">3,000+ likes</span>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-100 rounded-xl p-5">
+                                            <span class="block text-2xl font-bold text-[#005fa5]">10K+</span>
+                                            <span class="text-xs text-slate-500 font-mono uppercase tracking-wide">Impressions (2 Videos)</span>
+                                            <span class="block text-xs text-slate-400 mt-1">2,000+ likes each</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-full max-w-[220px] mx-auto md:mx-0 rounded-xl overflow-hidden bg-slate-100 shadow-sm">
+                                    <img src="https://placehold.co/405x720/1b3a1a/ffffff?text=Vlog+Vertical" alt="Personal social media vertical video still" class="w-full h-auto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05 Contact Section -->
+                <div id="contact" class="mb-14 rounded-2xl overflow-hidden shadow-sm scroll-mt-24">
+                    <div class="bg-[#005fa5] px-4 py-3 flex items-center justify-between text-white select-none">
+                        <div class="flex items-center space-x-3">
+                            <div class="flex space-x-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                            </div>
+                            <div class="hidden sm:flex items-center space-x-1.5 pl-4 text-xs font-mono text-white/80">
+                                <span>siyi_workstation_v3.2</span>
+                                <span class="px-1.5 py-0.5 bg-white/15 rounded text-[10px] text-[#90a955]">Active</span>
+                                <span class="live-clock pl-2 border-l border-white/20 text-[#90a955]/90">12:00:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 text-xs">
+                            <button onclick="toggleWorkspaceExpand()" class="bg-[#ffffff]/10 hover:bg-[#ffffff]/20 transition-colors px-3 py-1 rounded text-white font-medium">Zen Mode</button>
+                            <button onclick="showToast('Content synced successfully ✓')" class="bg-[#90a955] text-[#005fa5] hover:bg-[#a3be66] transition-colors px-3 py-1 rounded font-semibold text-xs shadow-sm">Update ✓</button>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 sm:p-12 text-center">
+                        <div class="flex items-center justify-center space-x-3 border-b border-[#0d0d0d]/10 pb-4 mb-12">
+                            <span class="font-mono text-xs text-[#005fa5] bg-[#005fa5]/10 px-2 py-0.5 rounded font-bold">05</span>
+                            <h2 class="text-2xl font-bold tracking-tight text-[#0d0d0d] uppercase">CONTACT</h2>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                            <a href="mailto:zhu_siyi12@163.com" class="group flex flex-col items-center gap-3 p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-[#005fa5]/5 hover:border-[#005fa5]/20 transition-all">
+                                <div class="w-11 h-11 rounded-full bg-[#005fa5]/10 flex items-center justify-center text-[#005fa5] group-hover:bg-[#005fa5] group-hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-.828.672-1.5 1.5-1.5h16.5c.828 0 1.5.672 1.5 1.5v10.5a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V6.75z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6" /></svg>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400 font-mono uppercase tracking-wide">Email</span>
+                                    <span class="block text-sm font-semibold text-[#0d0d0d] mt-0.5">zhu_siyi12@163.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+8619850321832" class="group flex flex-col items-center gap-3 p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-[#005fa5]/5 hover:border-[#005fa5]/20 transition-all">
+                                <div class="w-11 h-11 rounded-full bg-[#005fa5]/10 flex items-center justify-center text-[#005fa5] group-hover:bg-[#005fa5] group-hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a1.5 1.5 0 001.5-1.5v-2.379a1.5 1.5 0 00-1.06-1.436l-3.55-1.065a1.5 1.5 0 00-1.552.44l-.827.827a11.25 11.25 0 01-5.657-5.657l.827-.827a1.5 1.5 0 00.44-1.552L7.815 3.31A1.5 1.5 0 006.379 2.25H4A1.5 1.5 0 002.5 3.75z" /></svg>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400 font-mono uppercase tracking-wide">Tel.</span>
+                                    <span class="block text-sm font-semibold text-[#0d0d0d] mt-0.5">+86 198 5032 1832</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/siyi-z-590771346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-3 p-6 rounded-2xl border border-slate-100 bg-slate-50 hover:bg-[#005fa5]/5 hover:border-[#005fa5]/20 transition-all">
+                                <div class="w-11 h-11 rounded-full bg-[#005fa5]/10 flex items-center justify-center text-[#005fa5] group-hover:bg-[#005fa5] group-hover:text-white transition-colors">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18v-8.4H5.67V18h2.67zM7 8.48a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zM18.34 18v-4.7c0-2.52-1.35-3.69-3.15-3.69a2.72 2.72 0 00-2.46 1.35h-.04V9.6H10.2c.04.75 0 8.4 0 8.4h2.67v-4.69c0-.25.02-.5.1-.68.2-.5.67-1.03 1.46-1.03 1.03 0 1.44.78 1.44 1.93V18h2.47z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-400 font-mono uppercase tracking-wide">LinkedIn</span>
+                                    <span class="block text-sm font-semibold text-[#0d0d0d] mt-0.5">View Profile ↗</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="w-full bg-[#1b3a1a]/45 backdrop-blur-md text-white/60 py-16 text-xs font-mono mt-0 border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div class="md:col-span-6 space-y-4">
+                <div class="text-base font-bold text-white tracking-tight">Siyi<span class="text-[#90a955]">.</span></div>
+                <p class="text-white/40 leading-relaxed max-w-sm">
+                    © 2026 Siyi Zhu. Crafted with strict attention to spatial grid balance, typographics and functional UI aesthetics.
+                </p>
+                <div class="pt-2 flex items-center space-x-3 text-white/30 text-[10px]">
+                    <span>Host Environment: Live</span>
+                    <span>•</span>
+                    <span>Responsive Desktop & Mobile Engine</span>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 space-y-3">
+                <span class="text-white font-semibold text-[10px] uppercase tracking-widest block">Elsewhere</span>
+                <ul class="space-y-2 text-white/50 text-[11px]">
+                    <li><a href="#about" class="hover:text-[#90a955] transition-colors">Biography Details</a></li>
+                    <li><a href="#creative-works" class="hover:text-[#90a955] transition-colors">Creative Index</a></li>
+                    <li><a href="#proposals" class="hover:text-[#90a955] transition-colors">Strategic Casefiles</a></li>
+                    <li><a href="#social-media" class="hover:text-[#90a955] transition-colors">Social Performance</a></li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-3 space-y-3">
+                <span class="text-white font-semibold text-[10px] uppercase tracking-widest block">Inquiries</span>
+                <ul class="space-y-2 text-white/50 text-[11px]">
+                    <li><a href="mailto:zhu_siyi12@163.com" class="hover:text-white transition-colors">zhu_siyi12@163.com</a></li>
+                    <li><a href="tel:+8619850321832" class="hover:text-white transition-colors">Direct: +86 198 5032 1832</a></li>
+                    <li><a href="https://www.linkedin.com/in/siyi-z-590771346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="hover:text-white transition-colors">LinkedIn Profile</a></li>
+                </ul>
+                <div class="pt-4 flex items-center space-x-2 select-none">
+                    <span class="text-[9px] text-white/30">Interface Status</span>
+                    <div class="w-8 h-4 bg-emerald-500/20 rounded-full relative p-0.5 border border-emerald-500/30">
+                        <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full absolute right-0.5 top-0.5 shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-6 right-6 z-[100] transform translate-y-12 opacity-0 bg-[#0d0d0d] text-white text-xs font-medium px-4 py-3 rounded-xl shadow-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center space-x-2 pointer-events-none">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#90a955]"></span>
+        <span id="toast-message"></span>
+    </div>
+
+    <div id="globalLightbox" class="fixed inset-0 z-50 bg-[#0d0d0d]/95 backdrop-blur-md hidden opacity-0 transition-all duration-300 flex flex-col items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white hover:text-neutral-400 text-xs font-medium tracking-widest transition-colors flex items-center space-x-1.5 z-50" onclick="closeLightbox()">
+            <span>✕</span> <span>CLOSE</span>
+        </button>
+        <div class="relative max-w-4xl w-full flex items-center justify-between" onclick="event.stopPropagation()">
+            <button id="lightbox-prev" onclick="navigateLightbox(-1)" class="absolute left-4 md:-left-16 text-white/50 hover:text-white p-3 transition-colors text-3xl z-50 hover:scale-110 duration-200">‹</button>
+            <div id="lightbox-content-wrapper" class="w-full flex flex-col items-center">
+            </div>
+            <button id="lightbox-next" onclick="navigateLightbox(1)" class="absolute right-4 md:-right-16 text-white/50 hover:text-white p-3 transition-colors text-3xl z-50 hover:scale-110 duration-200">›</button>
+        </div>
+    </div>
+
+    <script>
+        function filterWorks(category) {
+            const posterGallery = document.getElementById('poster-gallery');
+            const videoGallery = document.getElementById('video-gallery');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#0d0d0d]', 'text-white');
+                btn.classList.add('bg-[#0d0d0d]/5', 'text-[#5a5a58]');
+            });
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-[#0d0d0d]', 'text-white');
+                activeBtn.classList.remove('bg-[#0d0d0d]/5', 'text-[#5a5a58]');
+            }
+
+            if (posterGallery) posterGallery.style.display = (category === 'all' || category === 'poster') ? 'grid' : 'none';
+            if (videoGallery) videoGallery.style.display = (category === 'all' || category === 'video') ? 'grid' : 'none';
+        }
+
+        const posterStore = {
+            'school-works': {
+                items: [
+                    { type: 'image', src: 'https://placehold.co/300x533/eee/333?text=Work+1+(GIF)' },
+                    { type: 'image', src: 'https://placehold.co/300x533/ddd/333?text=Work+2+(GIF)' },
+                    { type: 'image', src: 'https://placehold.co/300x400/ccc/333?text=Work+3' }
+                ],
+                index: 0
+            },
+            'the-paper': {
+                items: [
+                    { type: 'image', src: 'https://placehold.co/300x400/eee/333?text=Paper+1' },
+                    { type: 'image', src: 'https://placehold.co/300x400/ddd/333?text=Paper+2' },
+                    { type: 'image', src: 'https://placehold.co/300x400/ccc/333?text=Paper+3' }
+                ],
+                index: 0
+            },
+            'aia-group': {
+                items: [
+                    { type: 'image', src: 'https://placehold.co/300x400/eee/333?text=AIA+1' },
+                    { type: 'image', src: 'https://placehold.co/300x400/e0e0e0/333?text=AIA+2' },
+                    { type: 'image', src: 'https://placehold.co/300x400/ddd/333?text=AIA+3' },
+                    { type: 'image', src: 'https://placehold.co/300x400/d0d0d0/333?text=AIA+4' },
+                    { type: 'image', src: 'https://placehold.co/300x400/ccc/333?text=AIA+5' }
+                ],
+                index: 0
+            }
+        };
+
+        const proposalStore = {
+            'automaker-eu-me': {
+                title: "Analysis of Top Domestic Automakers' Overseas Expansion into Europe & the Middle East",
+                description: [
+                    "Market priority tiered model: four market categories; target customer profiling covering five countries; nine major competitor landscape analyses. Identify market gaps within the 200,000–500,000 RMB price bracket, alongside differentiated communication positioning for Germany and France markets.",
+                    "Systematically sort six categories of compliance risks including EU tariff barriers and the AI Act for vehicle software, and build a corresponding response checklist.",
+                    "Establish a dual-market communication resource system for Europe and the Middle East, featuring a PR resource library with over 50 media platforms and more than 20 KOLs across diverse verticals."
+                ],
+                items: Array.from({length: 10}, (_, i) => `https://placehold.co/480x270/1b3a1a/ffffff?text=Case+1.${i+1}`),
+                index: 0
+            },
+            'oral-care-brand': {
+                title: "Overseas PR Plan for a Domestic Oral Care Brand Targeting Europe & America",
+                description: [
+                    "Conduct in-depth research on the fundamental differences between European and American consumers in media consumption habits and trust-building journeys, and design a two-phase communication strategy tailored to the gap: leveraging tech crowdfunding campaigns for buzz in the US and authoritative professional exhibitions for brand validation across Europe.",
+                    "Systematically dissect the PR tactics of three types of competing brands, and formulate a differentiation strategy built on professional media verification and industry expert endorsements to carve out a unique brand positioning.",
+                    "Deliver a full-spectrum execution framework covering the establishment of a media database of 50–70 European and American outlets, screening of 15 KOL resources with customized seeding strategies, a six-month communication roadmap, press release writing, and media distribution partnerships."
+                ],
+                items: Array.from({length: 1}, (_, i) => `https://placehold.co/300x400/1b3a1a/ffffff?text=Case+2.${i+1}`),
+                index: 0
+            },
+            'edu-museum': {
+                title: "Back-to-School Season Event Plan, Suzhou Education Museum",
+                description: [
+                    "Through curator interviews, SWOT analysis and visitor satisfaction data analysis, we established a new positioning of \"fun aesthetic education\".",
+                    "Pioneered the cross-border model of \"Museum + Metro Line 5\", and designed three immersive station-based activities including rare Chinese character literacy programs and dynamic textbook exhibitions. We also built a media matrix covering Su-e App, Weibo topics and WeChat Channels, forming a closed-loop communication system of \"online collection — offline check-in — secondary social media outreach\"."
+                ],
+                items: Array.from({length: 6}, (_, i) => `https://placehold.co/480x270/1b3a1a/ffffff?text=Case+3.${i+1}`),
+                index: 0
+            }
+        };
+
+        function changeProposal(group, direction) {
+            const data = proposalStore[group];
+            if (!data) return;
+            data.index = (data.index + direction + data.items.length) % data.items.length;
+            const imgEl = document.getElementById(`img-${group}`);
+            const pageEl = document.getElementById(`page-${group}`);
+            if (imgEl) imgEl.src = data.items[data.index];
+            if (pageEl) pageEl.textContent = `${data.index + 1} / ${data.items.length}`;
+        }
+
+        function openProposalPreview(group) {
+            const data = proposalStore[group];
+            if (!data) return;
+            const lightbox = document.getElementById('globalLightbox');
+            const wrapper = document.getElementById('lightbox-content-wrapper');
+            const descHtml = data.description.map(d => `<li class="mb-2">${d}</li>`).join('');
+            wrapper.innerHTML = `
+                <img id="lightboxImg" src="${data.items[data.index]}" class="max-h-[55vh] rounded-xl shadow-2xl object-contain mx-auto" />
+                <div class="mt-6 max-w-2xl text-left bg-white/5 rounded-xl p-6 max-h-[30vh] overflow-y-auto">
+                    <h3 class="text-white font-bold text-base mb-3">${data.title}</h3>
+                    <ul class="text-white/70 text-xs leading-relaxed list-disc pl-4">${descHtml}</ul>
+                </div>
+            `;
+            window._lightboxProposalGroup = group;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.add('opacity-100'), 50);
+            document.body.style.overflow = 'hidden';
+        }
+
+        const videoStore = {
+            'folk-craft': { items: [{src: '', orientation: 'horizontal'}], index: 0 },
+            'facial-cleanser': { items: [{src: '', orientation: 'horizontal'}], index: 0 },
+            'vlog-edits': { items: [{src: '', orientation: 'vertical'}, {src: '', orientation: 'horizontal'}], index: 0 }
+        };
+
+        function renderPosterMedia(group) {
+            const data = posterStore[group];
+            if (!data) return;
+            const item = data.items[data.index];
+            const imgEl = document.getElementById(`img-${group}`);
+            const vidEl = document.getElementById(`vid-${group}`);
+            if (!imgEl) return;
+            if (item.type === 'video' && vidEl) {
+                if (vidEl.getAttribute('src') !== item.src) {
+                    vidEl.src = item.src;
+                    if (item.poster) vidEl.poster = item.poster;
+                }
+                vidEl.classList.remove('hidden');
+                imgEl.classList.add('hidden');
+                vidEl.play().catch(() => {});
+            } else {
+                imgEl.src = item.src;
+                imgEl.classList.remove('hidden');
+                if (vidEl) {
+                    vidEl.classList.add('hidden');
+                    vidEl.pause();
+                }
+            }
+        }
+
+        function changePoster(group, direction) {
+            const data = posterStore[group];
+            if (!data) return;
+            data.index = (data.index + direction + data.items.length) % data.items.length;
+            renderPosterMedia(group);
+            const pageEl = document.getElementById(`page-${group}`);
+            if (pageEl) pageEl.textContent = `${data.index + 1} / ${data.items.length}`;
+        }
+
+        function changeVideo(group, direction) {
+            const data = videoStore[group];
+            if (!data) return;
+            data.index = (data.index + direction + data.items.length) % data.items.length;
+            const pageEl = document.getElementById(`page-${group}`);
+            if (pageEl) pageEl.textContent = `${data.index + 1} / ${data.items.length}`;
+        }
+
+        function openPosterPreview(group) {
+            const data = posterStore[group];
+            if (!data) return;
+            const lightbox = document.getElementById('globalLightbox');
+            const wrapper = document.getElementById('lightbox-content-wrapper');
+            const item = data.items[data.index];
+            if (item.type === 'video') {
+                wrapper.innerHTML = `<video src="${item.src}" ${item.poster ? `poster="${item.poster}"` : ''} class="max-h-[80vh] rounded-xl shadow-2xl object-contain" controls autoplay muted loop playsinline></video>`;
+            } else {
+                wrapper.innerHTML = `<img src="${item.src}" class="max-h-[80vh] rounded-xl shadow-2xl object-contain" />`;
+            }
+            window._lightboxProposalGroup = null;
+            window._lightboxPosterGroup = group;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.add('opacity-100'), 50);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openVideoPreview(group) {
+            const lightbox = document.getElementById('globalLightbox');
+            const wrapper = document.getElementById('lightbox-content-wrapper');
+            wrapper.innerHTML = `<div class="max-h-[70vh] rounded-xl shadow-2xl p-10 bg-white">Video Player Mockup</div>`;
+            lightbox.classList.remove('hidden');
+            setTimeout(() => lightbox.classList.add('opacity-100'), 50);
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function navigateLightbox(direction) {
+            if (window._lightboxProposalGroup) {
+                changeProposal(window._lightboxProposalGroup, direction);
+                openProposalPreview(window._lightboxProposalGroup);
+            } else if (window._lightboxPosterGroup) {
+                changePoster(window._lightboxPosterGroup, direction);
+                openPosterPreview(window._lightboxPosterGroup);
+            }
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('globalLightbox');
+            lightbox.classList.remove('opacity-100');
+            setTimeout(() => lightbox.classList.add('hidden'), 300);
+            document.body.style.overflow = '';
+            window._lightboxProposalGroup = null;
+            window._lightboxPosterGroup = null;
+        }
+        
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('translate-y-12', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-12', 'opacity-0');
+            }, 3000);
+        }
+
+        // Initialize poster media (handles image/video type on first paint) without
+        // touching any other page behavior.
+        function updateLiveClock() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+            document.querySelectorAll('.live-clock').forEach(function (el) {
+                el.textContent = timeStr;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            Object.keys(posterStore).forEach(function (group) {
+                renderPosterMedia(group);
+            });
+            updateLiveClock();
+            setInterval(updateLiveClock, 1000);
+        });
+    </script>
+</body>
+</html>
